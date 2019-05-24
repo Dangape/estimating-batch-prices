@@ -100,7 +100,7 @@ distance2Points <- function(origin,destination){
   destination=gsub(" ", "+", destination)
   results <- list();
   xml.url <- paste0('https://maps.googleapis.com/maps/api/distancematrix/xml?origins=',origin,'&destinations=',destination,
-                    '&key=AIzaSyA6xnTsu1u16-VMAboNm70sPLxexX9XcSI') #AIzaSyAzZRn4G0rL1PA5AljtJe3yBXvl_mrSddw
+                    '&key=YOUR GOOGLE API KEY HERE') 
   xmlfile <- xmlParse(GET(xml.url))
   dist <- xmlValue(xmlChildren(xpathApply(xmlfile,"//distance")[[1]])$value)
   distance <- as.numeric(sub(" km","",dist))
